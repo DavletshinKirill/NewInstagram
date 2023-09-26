@@ -1,0 +1,65 @@
+<!-- <div id = "window">
+<div id = "div_img">
+  <h1 mat-dialog-title>{{data.post.title}}</h1>
+<img src="api/download/{{data.post.photo}}" class = "main_photo">
+</div>
+<div *ngFor="let element of this.datasource">
+  <div class = "card">
+    <div class = "username">
+      <img src="api/download/{{element.user.mainPhoto}}">
+      <a href="user/{{element.user.id}}">{{element.user.username}}</a>
+      <span class="icons">
+        <mat-icon (click)="changeComment(element)">edit</mat-icon>
+        <mat-icon (click)="deleteComment(element)">delete</mat-icon>
+        </span>
+    </div>
+    <div class = "comment">{{element.comment}}</div>
+  </div>
+</div>
+<mat-paginator [pageSize]="pageSize" [length]="totalItems"
+               (page)="onPageChange($event)">
+</mat-paginator>
+<button mat-fab extended class="btn btn-primary big_button" (click)="addNewComment()">
+  Create comment
+</button>
+
+</div> -->
+<div class="desktop3-container">
+  <div class="desktop3-desktop3">
+    <div class="desktop3-user-section">
+      <img
+        src="api/download/{{data.user.mainPhoto}}"
+        alt="Ellipse34710"
+        class="desktop3-ellipse3"
+      />
+      <span class="desktop3-text"><span>{{data.user.username}}</span></span>
+    </div>
+    <img
+    src="api/download/{{data.post.photo}}"
+    alt="Rectangle94712"
+    class="desktop3-rectangle9"
+    />
+    <div class="desktop3-new-comment">
+      <button class="desktop3-rectangle16" (click)="addNewComment()"> Add </button>
+      <button class="desktop3-rectangle161" (click)="onClear()"> Clear </button>
+      <img
+        src="api/download/{{data.user.mainPhoto}}"
+        alt="Ellipse44717"
+        class="desktop3-ellipse4"
+      />
+      <textarea [(ngModel)] = "this.comment" class="desktop3-text2 desktop3-rectangle15" placeholder="Comment"></textarea>
+    </div>
+    <div class="desktop3-comments">
+      <div *ngFor="let element of this.datasource">
+        <div class = "comment">
+        <span class=""><span>{{element.comment}}</span></span>
+
+        <span class="icons">
+          <mat-icon (click)="changeComment(element)">edit</mat-icon>
+          <mat-icon (click)="deleteComment(element)">delete</mat-icon>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

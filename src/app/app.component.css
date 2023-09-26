@@ -1,0 +1,9 @@
+.navbar {
+  justify-content: space-between;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #2f8eed;
+}
+
+span {
+  padding-right: 1rem;
+}

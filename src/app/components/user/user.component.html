@@ -1,0 +1,39 @@
+<div>
+  <div class="desktop1-navbar">
+    <span class="desktop1-text04"><span>Chats</span></span>
+    <span class="desktop1-text06"><span>Main Page</span></span>
+  </div>
+  <div class="desktop1-user-section">
+    <div class = "big_button_wrapper">
+      <mat-icon class="mat-icon-rtl-mirror" color="primary"(click)="addNewPost()"  [hidden]="this.visibility">add_circle_outline</mat-icon>
+    </div>
+    <img src="api/download/{{dataSource.mainPhoto}}" class="desktop1-ellipse1" (click)="userPhotoClicked()">
+    <span class="desktop1-text08"> {{dataSource.username}} </span>
+    <button mat-fab extended class="btn btn-danger small_button" (click)="logout()" [hidden]="this.visibility">
+      Logout
+    </button>
+      <!-- <button mat-fab extended class="" (click)="addNewPost()"  [hidden]="this.visibility">
+        Create post
+      </button>
+
+        <mat-icon class="mat-icon-rtl-mirror">add_circle</mat-icon> -->
+  </div>
+
+  <div [hidden]="checkPosts()">
+<div class="desktop1-post-section">
+  <div *ngFor="let element of this.dataSource.posts" class="post">
+  <mat-card class="example-card">
+    <mat-card-content>
+    <div class = "image_center" >
+    <img mat-card-image src="api/download/{{element.photo}}" alt="Your photo" (click)="card_click(element)">
+    </div>
+  </mat-card-content>
+  <mat-card-actions [hidden]="this.visibility">
+    <mat-icon (click)="changePost(element)">edit</mat-icon>
+    <mat-icon (click)="deletePost(element)" >delete</mat-icon>
+  </mat-card-actions>
+  </mat-card>
+</div>
+</div>
+</div>
+</div>

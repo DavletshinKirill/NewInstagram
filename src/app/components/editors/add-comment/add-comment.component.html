@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Add Comment</h1>
+<div mat-dialog-content style="display: inline; padding: 0px; margin: auto;">
+
+  <mat-form-field class="full-width-input">
+    <input [(ngModel)]="comment.comment" type="textarea" placeholder="Comment" required >
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+  <button class="btn btn-danger" mat-raised-button (click)="onNoClick()">Cancel</button>
+  <button class="btn btn-primary right-align" mat-raised-button color="primary"
+    [mat-dialog-close]="comment">Add</button>
+</div>
